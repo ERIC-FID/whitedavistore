@@ -1,0 +1,274 @@
+header{
+    background-color:  #fefefe;
+    height: 10vh;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+
+}
+header .hold{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+header h2 {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8em;
+}
+
+header .list {
+  display: none;
+
+}
+  header .listMobile{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: #fefefe;
+    right: 0;
+    top: 13.5%;
+    width: 60%;
+    height: 45vh;
+    z-index: 300;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    overflow-x: hidden;
+
+    
+  
+  
+  }
+    header .listMobile ul{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+    }
+    header .listMobile ul li a{
+      color: black;
+      text-decoration: none;
+      font-family: sans-serif;
+    }
+       header .listMobile ul li{
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        padding: 0.2rem 1rem;
+        display: flex;
+        gap: 0.5rem;
+       }
+    header .listMobile{
+      display: flex;
+    }
+    header .listMobile.open{
+       transform: translateX(0);
+    }
+
+@media screen and (min-width: 1024px) {
+
+   header .listMobile{
+    display: none;
+   }
+  header img{
+    width: 4rem !important;
+  }
+
+  header .list{
+    display: block;
+
+    
+  }
+
+  header{
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 1rem;
+
+  }
+
+  header h2 {
+  font-size: 1.3em;
+  }
+
+  header .Menu{
+    display: none;
+  }
+
+  header .list ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    font-size: 1.1em;
+    
+
+  }
+  
+  header .head{
+    margin-right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header .list li a{
+    text-decoration: none;
+    color: #575555;
+    font-family: sans-serif;
+  }
+  header .hold{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: unset;
+  }
+}
+header{
+    background-color:  #fefefe;
+    height: 10vh;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+
+}
+header .hold{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+header h2 {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8em;
+}
+
+header .list {
+  display: none;
+
+}
+  header .listMobile{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: #fefefe;
+    right: 0;
+    top: 13.5%;
+    width: 60%;
+    height: 45vh;
+    z-index: 300;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    overflow-x: hidden;
+
+    
+  
+  
+  }
+    header .listMobile ul{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+    }
+    header .listMobile ul li a{
+      color: black;
+      text-decoration: none;
+      font-family: sans-serif;
+    }
+       header .listMobile ul li{
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        padding: 0.2rem 1rem;
+        display: flex;
+        gap: 0.5rem;
+       }
+    header .listMobile{
+      display: flex;
+    }
+    header .listMobile.open{
+       transform: translateX(0);
+    }
+
+@media screen and (min-width: 1024px) {
+
+   header .listMobile{
+    display: none;
+   }
+  header img{
+    width: 4rem !important;
+  }
+
+  header .list{
+    display: block;
+
+    
+  }
+
+  header{
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 1rem;
+
+  }
+
+  header h2 {
+  font-size: 1.3em;
+  }
+
+  header .Menu{
+    display: none;
+  }
+
+  header .list ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    font-size: 1.1em;
+    
+
+  }
+  
+  header .head{
+    margin-right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header .list li a{
+    text-decoration: none;
+    color: #575555;
+    font-family: sans-serif;
+  }
+  header .hold{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: unset;
+  }
+}
+
+

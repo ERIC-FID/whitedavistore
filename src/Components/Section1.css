@@ -1,0 +1,58 @@
+.hero{
+    background:linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45) ),url(Images/Cover_Hero.jpg);
+    height: 45vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fefefe;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.hero .box{
+    position: absolute;
+    padding: 0 2rem;
+   
+}
+.hero .box p{
+    margin-top: 0.5rem;
+    line-height: 1.5em;
+}
+.hero .box .btn1{
+    width: 6rem;
+    padding: 0.5rem 0;
+    margin-top: 2rem;
+    background-color: transparent;
+    border: 2PX solid #fefefe ;
+    color: #fefefe;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+      .hero{
+        height: 100vh;
+        display: block;
+        margin-bottom: 4rem;
+        background-attachment: fixed;
+      }
+      .hero .box{
+        position: absolute;
+        top: 40%;
+        text-align: left;
+        font-size: 1.3em;
+        left: 5%;
+        line-height: 3.5rem;
+   
+}
+.hero .box .btn1{
+    width: 10rem;
+    padding: 1rem 0;
+    font-size: 1em;
+    font-weight: 100;
+}
+      
+}
