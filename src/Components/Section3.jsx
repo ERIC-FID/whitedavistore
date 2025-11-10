@@ -6,38 +6,38 @@ function Maylike(){
     const [num,setNum] = useState(0)
     const [visibleCount, setVisibleCount] = useState(8);
     const My = [
-        [  "/Images/sample2.jpg", "/Images/sample2.jpg","/Images/sample2.jpg","/Images/sample2.jpg"],
-        ["Images/sample.jpg","Images/sample.jpg","Images/sample.jpg","Images/sample.jpg"]
+        [  "/whitedavistore/Images/sample2.jpg", "/whitedavistore/Images/sample2.jpg","/whitedavistore/Images/sample2.jpg","/whitedavistore/Images/sample2.jpg"],
+        ["/whitedavistore/Images/sample.jpg","/whitedavistore/Images/sample.jpg","/whitedavistore/Images/sample.jpg","/whitedavistore/Images/sample.jpg"]
           
     ]
           useEffect(() => {
     const interval = setInterval(() => {
     
       setNum(n => (n + 1) % My.length);
-    }, 2000);
+    }, 5000);
 
 
     return () => clearInterval(interval);
   }, []);
 
     
-  // 👀 Adjust number of images based on screen size
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        setVisibleCount(2); // small screen → 2 images
+        setVisibleCount(2);
       } else {
-        setVisibleCount(8); // large screen → 8 images
+        setVisibleCount(8); 
       }
     };
 
-    handleResize(); // check once on load
+    handleResize(); 
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // 🧩 Pick which group of images to show
+
   const currentImages = My[num].slice(0, visibleCount);
 
   

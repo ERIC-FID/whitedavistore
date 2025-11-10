@@ -1,15 +1,28 @@
 import "./Header.css"
 import { useState } from "react"
 import { Menu } from "lucide-react"
+import { useEffect } from "react"
 function Header(){
     const [menuOpen,setMenu] = useState(false)
+
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = "hidden"; 
+        } else {
+            document.body.style.overflow = "auto"; 
+        }
+
+         return () => {
+         document.body.style.overflow = "auto"; 
+         };
+    }, [menuOpen]);
 
 
 
     return (
         <header>
            <div className="hold">
-                    <img src="Images/logo.png" alt="" style={{width:"3rem"}}/>
+                    <img src="/whitedavistore/Images/logo.png" alt="" style={{width:"3rem"}}/>
                      <h2>WhitedavidStore</h2>
                    
            </div>

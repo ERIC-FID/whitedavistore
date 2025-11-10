@@ -1,10 +1,39 @@
 import "./Section5.css"
-import {Mail,User,MessageSquare,Send} from "lucide-react"
+import {Mail,User,MessageSquare,Send, Target} from "lucide-react"
+import { useState } from "react";
+import axios from "axios";
 function Contact(){
+    const [email,setEmail] = useState("");
+    const [name,setName] = useState("");
+    const [message,SetMessage] = useState("");
+    const [status,setStatus] = useState("");
 
+    const handleSend = async (e)=>{
+        e.preventDefault()
+    try {
+      const response =   await axios.post("https://formspree.io/f/xrbovrzb",{
+        name,
+        email,
+        message   
+        });
+        if (response.status == 200){
+            setStatus("message sent succuessfully")
+            setEmail("")
+            setName("")
+            SetMessage("")
+        }
+        else {
+            setStatus("Not successful")
+        }
+    } 
+    catch (error){
+        setStatus("fail to send check ur connection")
+    }
+    };
 
     return (
         <section className="contact" id="contact">
+                                
             <h1 className="head" style={{marginLeft:"0"}}>Contact Us</h1>
                 <div className="big">
                       <div className="small">    
@@ -13,28 +42,47 @@ function Contact(){
                             <p style={{fontFamily:"sans-serif",fontSize:"0.8em",fontWeight:"bold"}}>We’d Love to Hear from You</p>
                          </div>
                          
-                        <div style={{width:"80%"}} className="init">
-                             <label htmlFor="" style={{display:"block",fontSize:"1.2em",marginTop:"0.5rem",color:"#00000082"}}>Name</label>
+                        <form onSubmit={handleSend} style={{width:"80%"}} className="init">
                             <div>
-                                <User ize={30} strokeWidth={1} color="rgba(0,0,0,0.5)" style={{marginLeft:"0.5rem", color:"black"}}/>
-                                <input type="text" placeholder="Eric Fid"/>
+                                <User ize={25} strokeWidth={1} color="rgba(0,0,0,0.5)" style={{marginLeft:"0.5rem", color:"black"}}/>
+                                <input type="text"
+                                 placeholder="Name"
+                                 onChange={(e)=>setName(e.target.value
+                                )}
+                                value={name}
+                                 />
 
                             </div> 
                                
-                            <label htmlFor="" style={{display:"block",fontSize:"1.2em",marginTop:"0.5rem",color:"#00000082"}}>Email</label>
                             <div>
-                                <Mail size={30} strokeWidth={1} color="rgba(0,0,0,0.5)" style={{marginLeft:"0.5rem", color:"black"}}/>
-                                <input type="Email" placeholder="ericfid@gmail.com" />
+                                <Mail size={25} strokeWidth={1} color="rgba(0,0,0,0.5)" style={{marginLeft:"0.5rem", color:"black"}}/>
+                                <input type="Email" 
+                                placeholder="Email"
+                                onChange={(e)=>setEmail(e.target.value
+                                )} 
+                                value= {email}
+                                />
+                               
                             </div>
 
-                              <label htmlFor="" style={{fontSize:"1.2em",marginTop:"0.5rem",color:"#00000082"}}>Your Message</label>
                             <div className="work">
-                                <MessageSquare size={30} strokeWidth={1} color="rgba(0,0,0,0.5)" style={{marginLeft:"0.5rem", color:"rgba(0,0,0,0.1)"}}/>
-                                <textarea name="" id="" placeholder="Have any requests? Write them here!"></textarea>
+                                <MessageSquare size={25} strokeWidth={1} color="rgba(0,0,0,0.5)" style={{marginLeft:"0.5rem", color:"rgba(0,0,0,0.1)"}}/>
+                                <textarea name="" id=""
+                                 placeholder="Your Message"
+                                onChange={(e)=>SetMessage(e.target.value
+                                )}
+                                value= {message}
+                                 ></textarea>
                             </div>
-                               <button className="btn" style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center", gap:"1rem",padding:"0.5rem 1rem",backgroundColor:"#333333",color:"#fefefe",marginTop:"1rem",borderRadius:"10px"}}>Send Message <span><Send size={30} strokeWidth={1} color="#FEFEFE" style={{marginLeft:"0.5rem", color:"black"}}/></span></button>
+                               <button type="submit" className="btn" style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center", gap:"1rem",padding:"0.5rem 1rem",backgroundColor:"#333333",color:"#fefefe",marginTop:"1rem",borderRadius:"10px"}}>Send Message      
+                                <span><Send size={25} strokeWidth={1} color="#FEFEFE" style={{marginLeft:"0.5rem", color:"black"}}/></span></button>
+                                 <p style={{textAlign:"center"}}>{status}</p>
+                        </form>
 
-                        </div>
+
+                         
+
+                           
 
                       </div>
 

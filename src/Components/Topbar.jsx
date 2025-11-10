@@ -9,7 +9,7 @@ function Topbar(){
 
             
                 <Phone size = {15} color="#fefefe" fill="#fefefe" className="phone"/>  
-                  <p> +234 903 262 7726, Free Delivery Around Minna</p>
+                  <p> +234 903 262 7726</p>
                 
            
             

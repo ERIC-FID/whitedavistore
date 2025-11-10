@@ -4,35 +4,71 @@ import Maylike from "./Section3"
 import { useState,useEffect } from "react"
 function OurProducts(){
 
+    const [selected,setSelected] =  useState(0)
+
+    const buttons = ["New Products","Branded Products", "Recent Product"]
+
 
         const Images = [
-                "/Images/sample.jpg",
-                "/Images/sample2.jpg",
-                "/Images/sample2.jpg",
-                "/Images/sample.jpg",
-                "/Images/sample.jpg",
-                "/Images/sample2.jpg",
-                "/Images/sample2.jpg",
-                "/Images/sample.jpg",
-                "/Images/sample2.jpg",
-                "/Images/sample2.jpg",
-                "/Images/sample.jpg",
-                "/Images/sample.jpg",
-                "/Images/sample2.jpg",
-                "/Images/sample2.jpg",
-                "/Images/sample2.jpg",
-                "/Images/sample.jpg"
+               [ "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample.jpg"],
+                [
+                    "/whitedavistore/Images/sample2.jpg",
+                    "/whitedavistore/Images/sample2.jpg",
+                    "/whitedavistore/Images/sample2.jpg",
+                    "/whitedavistore/Images/sample2.jpg",
+                    "/whitedavistore/Images/sample2.jpg",
+                    "/whitedavistore/Images/sample2.jpg",
+                     "/whitedavistore/Images/sample2.jpg",
+                     "/whitedavistore/Images/sample2.jpg",
+                    "/whitedavistore/Images/sample2.jpg",
+                     "/whitedavistore/Images/sample2.jpg",
+                    "/whitedavistore/Images/sample2.jpg",
+                     "/whitedavistore/Images/sample2.jpg",
+                ],
+                 [ "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample2.jpg",
+                "/whitedavistore/Images/sample.jpg"]
     ]
 
     const [number,setNumber] = useState(8)
     const [View,setView] = useState(false)
-    const [less,setLess] = useState(Images.slice(0,number))
+    const [less,setLess] = useState(Images[selected].slice(0,number))
     const [word,setWord] = useState("View All Products")
+
+    
 
        
        useEffect( ()=>{
                 const handleResize = () => {          
-                  if (window.innerWidth <= 768) {
+                  if (window.innerWidth <= 500) {
                       setNumber(4);   
                 
                   } 
@@ -47,21 +83,32 @@ function OurProducts(){
          return () => window.removeEventListener("resize", handleResize)},
 
        [View,number])
+     useEffect( ()=>{
 
-       function viewless(){
-                    setView(!View)
                      if (View === true){
-                          setLess(Images.slice())
+                          setLess(Images[selected].slice())
                           setWord("View Less")
                          
                          
                         }
                      else {
-                        setLess (Images.slice(0,number))
+                        setLess (Images[selected].slice(0,number))
                          setWord("View All Products")
                        
                  }
-            }
+
+
+     },[selected,number,View]
+
+     )
+
+       function viewless() {
+            setView((prev) => !prev);
+         }
+    
+
+            
+
 
     return (
 
@@ -71,9 +118,16 @@ function OurProducts(){
                     <h1 className="head">Our Products</h1>
                     <hr />
                     <div className="btnbox">
-                        <button className="active">New Product</button>
-                        <button>Featured Product</button>
-                        <button>Most Recent</button>
+                        {
+                            buttons.map((label,index)=>(
+                                <button 
+                                key = {index}
+                                onClick={()=>setSelected(index)} 
+                                className={selected === index? "active":""}
+                                >{label}</button>
+
+                            ))
+                        }
                     </div>
                     <div className="grid">
 

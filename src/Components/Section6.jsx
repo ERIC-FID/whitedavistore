@@ -4,7 +4,7 @@ function Footer(){
 
     return (
         <footer>
-            <img src="Images/whitedavid.png" alt="" style={{width:"4rem",marginTop:"0.5rem"}} className="logo" />
+            <img src="/whitedavistore/Images/whitedavid.png" alt="" style={{width:"4rem",marginTop:"0.5rem"}} className="logo" />
             <div className="grid">
                 <div className="words">
                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, ducimus quisquam!     Architecto quidem repellendus maiores? Dicta mollitia aspernatur itaque, odit repellat corporis rerum perspiciatis, rem minima voluptatem ipsa qui quae.

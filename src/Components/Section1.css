@@ -1,5 +1,5 @@
 .hero{
-    background:linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45) ),url(Images/Cover_Hero.jpg);
+    background:linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45) ),url(/Images/Cover_Hero.jpg);
     height: 45vh;
     background-position: center;
     background-size: cover;
@@ -18,9 +18,13 @@
     padding: 0 2rem;
    
 }
+.hero .box h1{
+    font-size: 1.5em;
+}
 .hero .box p{
     margin-top: 0.5rem;
     line-height: 1.5em;
+    font-size: 0.8em;
 }
 .hero .box .btn1{
     width: 6rem;
@@ -43,7 +47,7 @@
         position: absolute;
         top: 40%;
         text-align: left;
-        font-size: 1.3em;
+        font-size: 1.5em;
         left: 5%;
         line-height: 3.5rem;
    
@@ -51,7 +55,7 @@
 .hero .box .btn1{
     width: 10rem;
     padding: 1rem 0;
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 100;
 }
       
