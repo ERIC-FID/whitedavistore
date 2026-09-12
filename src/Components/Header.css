@@ -42,6 +42,7 @@ header h2 {
     background-color: var(--bg-primary);
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    -webkit-tap-highlight-color: transparent;
 }
 
 header .list {
@@ -95,6 +96,7 @@ header .listMobile ul li a {
     font-weight: 500;
     font-size: 1.1em;
     width: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 header .listMobile ul li i {
@@ -111,7 +113,7 @@ header .listMobile ul li i {
     width: 100vw;
     height: calc(100vh - 70px);
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1050;
+    z-index: 990;
     backdrop-filter: blur(2px);
     animation: fadeIn 0.3s ease-in-out;
 }
