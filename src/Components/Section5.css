@@ -4,6 +4,26 @@
     padding:0.3rem 1.5rem ;
     
 }
+.contact .init .btn .loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff; /* blue color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 1000;
+  display: inline-block;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+
+}
 
 .contact .big{
     width: 100%;
@@ -26,70 +46,70 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fefefe;
-    padding-bottom: 1.5rem;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-color: var(--card-bg);
+    padding-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    overflow: hidden;
 }
 
 .contact .big .small .word{
-    background-color: #333333;
+    background-color: var(--text-primary);
     text-align: center;
-    padding: 0.8rem;
+    padding: 1.5rem;
     color: #fefefe;
     width: 100%;
     border: none;
-    margin-bottom: 1rem;
-
+    margin-bottom: 1.5rem;
 }
 
 .contact .big .small .init input{
     width: 100%;
-    height: 8vh;
+    height: 3rem;
     padding: 0.5rem;
     border: none;
-    border-radius:10px;
+    background: transparent;
 }
 .contact .big .small .init input:focus{
     outline: none;
 }
 .contact .big .small .init .work textarea{
     width: 100%;
-    height: 90%;
+    height: 120px;
     border: none;
-    margin-top: 0.3rem;
-   
-   
+    margin-top: 0.8rem;
+    background: transparent;
+    resize: none;
 }
 
 .contact .big .small .init div {
-  border: 2px solid rgba(0,0,0,0.1);
-  height:20%;
+  border: 1px solid var(--border-color);
+  background-color: #f9fafb;
+  height: auto;
   display:flex;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 10px;
-  transition: border-color 0.5s ease;
-  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
 }
 .contact .big .small .init .work{
-  border: 2px solid rgba(0,0,0,0.1);
-  width:100% ;
-  height: 20vh;
+  border: 1px solid var(--border-color);
+  background-color: #f9fafb;
+  width: 100%;
+  height: auto;
   display:flex;
   align-items: flex-start;
   gap: 0.5rem;
-  border-radius: 10px;
- transition: border-color 0.3s ease;
-    
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-.contact .big .small .init div:has(input:focus){
-      border-color: #333333;
-}
-.contact .big .small .init .work:has(textarea:focus){
-      border-color: #333333;
-
+.contact .big .small .init div:has(input:focus),
+.contact .big .small .init .work:has(textarea:focus) {
+    border-color: var(--accent-color);
+    background-color: white;
+    box-shadow: 0 0 0 2px rgba(179, 139, 89, 0.1);
 }
 .contact .big .small .init .work textarea:focus{
     outline: none !important;
@@ -124,15 +144,8 @@
     }
 
     .contact .big .small .init div {
-    border: 2px solid rgba(0,0,0,0.1);
-    height:15%;
-    display:flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 10px;
-    transition: border-color 0.5s ease;
-    margin-bottom: 2rem;
-}
+        margin-bottom: 1.5rem;
+    }
 
 .contact .big .small .btn{
     margin-top: 2.5rem !important;

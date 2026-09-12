@@ -1,17 +1,17 @@
 footer{
     width: 100%;
-    background-color: #333333;
+    background-color: var(--text-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #f0f0f0f0;
-    position: block;
+    color: #f9fafb;
+    padding-top: 2rem;
 }
 footer p{
-    color: #f0f0f0f0;
-    font-size: 0.7em;
+    color: #9ca3af;
+    font-size: 0.8em;
     text-align: center;
-    font-family:  sans-serif;
+    font-family: 'Inter', sans-serif;
 }
  footer .grid .words{
     display: none;
@@ -19,18 +19,19 @@ footer p{
 
 footer .grid{
     display: grid;
-    grid-template-columns:1fr 1fr ;
+    grid-template-columns: 1fr;
     width: 100%;
-    justify-items: center;
-    gap: 1rem;
-    padding: 0 1.5rem;
-    font-family: sans-serif;
-    color: #f0f0f0;
+    justify-items: flex-start;
+    gap: 2rem;
+    padding: 0 2rem;
+    font-family: 'Inter', sans-serif;
+    color: #f9fafb;
 }
 
 footer .grid div h3{
-    font-size: 0.8em;
-    margin-bottom: 0.5rem;
+    font-size: 1.1em;
+    margin-bottom: 1rem;
+    color: white;
 }
 footer .grid div{
     width: 100%;
@@ -40,8 +41,9 @@ footer .grid div ul{
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.6em;
+    gap: 0.8rem;
+    font-size: 0.9em;
+    color: #d1d5db;
 }
 
 footer .grid .right{
@@ -56,10 +58,11 @@ footer .grid .left{
 }
 
 footer .smallfoot{
-    border-top: 2px solid rgba(254, 246, 24,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
-    margin-top: 0.5rem;
-    font-family: sans-serif;
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+    font-family: 'Inter', sans-serif;
     font-size: 0.8em;
 }
 
@@ -70,26 +73,23 @@ footer .smallfoot{
     }
 
     footer .logo{
-        margin-left: 1rem;
+        margin-left: 2rem;
         margin-top: 0.5rem;
+        width: 5rem !important;
     }
 
     footer .grid{
-    display: grid;
-    grid-template-columns:50% 1fr 1fr ;
-    width: 100%;
-    justify-items: flex-start;
-
-  
-}
+        grid-template-columns: 40% 1fr 1fr;
+        padding: 0 4rem;
+    }
 
    footer .grid .words{
-    width: 50%;
-    font-size: 0.7em;
-    font-family: sans-serif;
-    display: block;
-    line-height: 2em;
-    color: #f0f0f0;
+        width: 80%;
+        font-size: 0.95em;
+        font-family: 'Inter', sans-serif;
+        display: block;
+        line-height: 1.8em;
+        color: #d1d5db;
    }
 
 }

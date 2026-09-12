@@ -58,7 +58,7 @@ function OurProducts(){
                 "/whitedavistore/Images/sample.jpg"]
     ]
 
-    const [number,setNumber] = useState(8)
+    const [number,setNumber] = useState(4)
     const [View,setView] = useState(false)
     const [less,setLess] = useState(Images[selected].slice(0,number))
     const [word,setWord] = useState("View All Products")
@@ -68,12 +68,12 @@ function OurProducts(){
        
        useEffect( ()=>{
                 const handleResize = () => {          
-                  if (window.innerWidth <= 500) {
-                      setNumber(4);   
+                  if (window.innerWidth > 500) {
+                      setNumber(8);   
                 
                   } 
                   else {
-                         setNumber(8);    
+                         setNumber(4);   
              }
       };
              handleResize();    
@@ -114,6 +114,7 @@ function OurProducts(){
 
         <>
                 <section className="section2" id="vieww">
+                    <div className="loader"></div>
                     <p className="title">WhitedavidStore Collection</p>
                     <h1 className="head">Our Products</h1>
                     <hr />

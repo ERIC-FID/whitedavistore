@@ -1,13 +1,25 @@
+:root {
+    --bg-primary: #fcfcfc;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --accent-color: #b38b59; /* Keeping the gold as accent, but we can darken it slightly if needed */
+    --accent-dark: #8b6b43;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 body{
-    background-color: #fEfEfE;
-    
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
 }
-

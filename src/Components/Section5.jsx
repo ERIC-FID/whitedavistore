@@ -1,6 +1,8 @@
 import "./Section5.css"
 import {Mail,User,MessageSquare,Send, Target} from "lucide-react"
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import AOS from "aos"
+import "aos/dist/aos.css"
 import axios from "axios";
 function Contact(){
     const [email,setEmail] = useState("");
@@ -31,8 +33,16 @@ function Contact(){
     }
     };
 
+       useEffect(() => {
+                AOS.init({
+                duration: 1000, // how long animations take (ms)
+              once: true,     // only animate once
+              easing: "ease-in-out", // smooth effect
+            })
+          }, [])
+
     return (
-        <section className="contact" id="contact">
+        <section className="contact" id="contact" data-aos="zoom-in" data-aos-duration="1500">
                                 
             <h1 className="head" style={{marginLeft:"0"}}>Contact Us</h1>
                 <div className="big">
@@ -74,7 +84,7 @@ function Contact(){
                                 value= {message}
                                  ></textarea>
                             </div>
-                               <button type="submit" className="btn" style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center", gap:"1rem",padding:"0.5rem 1rem",backgroundColor:"#333333",color:"#fefefe",marginTop:"1rem",borderRadius:"10px"}}>Send Message      
+                               <button type="submit" className="btn" style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center", gap:"1rem",padding:"0.5rem 1rem",backgroundColor:"#333333",color:"#fefefe",marginTop:"1rem",borderRadius:"10px"}}>Send Message    
                                 <span><Send size={25} strokeWidth={1} color="#FEFEFE" style={{marginLeft:"0.5rem", color:"black"}}/></span></button>
                                  <p style={{textAlign:"center"}}>{status}</p>
                         </form>
